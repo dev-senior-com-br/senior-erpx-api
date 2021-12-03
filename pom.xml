@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.senior</groupId>
 	<artifactId>senior-erpx-api</artifactId>
-	<version>0.0.1-alpha</version>
+	<version>0.0.2-alpha</version>
 	<packaging>jar</packaging>
 
 	<name>Senior ERPX API</name>
@@ -63,6 +63,20 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<repository>
+			<id>ossrh-snapshots</id>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<finalName>${project.artifactId}-${project.version}</finalName>

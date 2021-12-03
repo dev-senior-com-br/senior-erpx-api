@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2-alpha] - 2021-12-03
+
 ### Added
 
 ### Changed
@@ -19,10 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- ERPX SearchPerson payload.
+-   ERPX SearchPerson payload.
 
 ## [0.0.1-alpha] - 2021-12-02
 
 ### Added
 
-- ERPX Product payload.
+-   ERPX Product payload.
+
+[Unreleased]: https://github.com/dev-senior-com-br/senior-erpx-api/compare/0.0.2-alpha...HEAD
+
+[0.0.2-alpha]: https://github.com/dev-senior-com-br/senior-erpx-api/compare/0.0.1-alpha...0.0.2-alpha

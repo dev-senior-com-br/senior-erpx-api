@@ -1,4 +1,4 @@
-package br.com.senior.erpx;
+package br.com.senior.erpx.pessoa;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -8,17 +8,17 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CompanyGroup {
+public class Country {
 
-    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(CompanyGroup.class);
+    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Country.class);
 
     /**
-     * Grupo empresa
+     * Código
      */
-    public Long codGre;
+    public String codPai;
     /**
      * Nome
      */
-    public String nomGre;
+    public String nomPai;
 
 }

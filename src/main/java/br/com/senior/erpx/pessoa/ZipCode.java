@@ -1,4 +1,4 @@
-package br.com.senior.erpx;
+package br.com.senior.erpx.pessoa;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -8,17 +8,13 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Country {
+public class ZipCode {
 
-    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Country.class);
+    public static final JacksonDataFormat ZIP_CODE_FORMAT = new JacksonDataFormat(ZipCode.class);
 
     /**
-     * Código
+     * CEP endereço
      */
-    public String codPai;
-    /**
-     * Nome
-     */
-    public String nomPai;
+    public Long cepIni;
 
 }

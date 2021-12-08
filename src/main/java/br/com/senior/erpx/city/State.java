@@ -1,4 +1,4 @@
-package br.com.senior.erpx;
+package br.com.senior.erpx.city;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 

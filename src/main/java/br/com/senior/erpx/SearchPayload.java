@@ -10,12 +10,15 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchPersonResponse {
+public class SearchPayload {
 
-    public static final JacksonDataFormat SEARCH_PERSON_RESPONSE_FORMAT = new JacksonDataFormat(SearchPersonResponse.class);
+    public static final JacksonDataFormat SEARCH_FORMAT = new JacksonDataFormat(SearchPayload.class);
 
-    public Long totalPages;
-    public Long totalElements;
-    public List<Person> contents;
+    public Long offset;
+    public Long size;
+    public String orderBy;
+    public String filter;
+    public List<String> displayFields;
+
 
 }

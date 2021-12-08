@@ -1,9 +1,11 @@
-package br.com.senior.erpx;
+package br.com.senior.erpx.pessoa;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import br.com.senior.erpx.city.City;
+import br.com.senior.erpx.city.State;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
@@ -55,7 +57,7 @@ public class Person {
     /**
      * CEP
      */
-    public CEP e008cep;
+    public ZipCode e008cep;
     /**
      * Endereço
      */

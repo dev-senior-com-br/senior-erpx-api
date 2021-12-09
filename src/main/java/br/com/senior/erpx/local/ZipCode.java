@@ -1,4 +1,4 @@
-package br.com.senior.erpx.city;
+package br.com.senior.erpx.local;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -12,25 +12,14 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
-public class City {
+public class ZipCode {
 
-    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(City.class);
+    public static final JacksonDataFormat ZIP_CODE_FORMAT = new JacksonDataFormat(ZipCode.class);
 
-    public String id;
     /**
-     * Código cidade
+     * CEP endereço
      */
-    @JsonProperty("codRai")
-    public Long code;
-    /**
-     * Nome cidade
-     */
-    @JsonProperty("nomCid")
-    public String name;
-    /**
-     * Estado
-     */
-    @JsonProperty("e007ufs")
-    public State state;
+    @JsonProperty("cepIni")
+    public Long initialZipCode;
 
 }

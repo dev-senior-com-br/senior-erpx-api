@@ -1,27 +1,30 @@
-package br.com.senior.erpx.pessoa;
+package br.com.senior.erpx.company;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
-public class Country {
+public class CompanyGroup {
 
-    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Country.class);
+    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(CompanyGroup.class);
 
     /**
-     * Código
+     * Grupo empresa
      */
-    public String codPai;
+    @JsonProperty("codGre")
+    public Long code;
     /**
      * Nome
      */
-    public String nomPai;
+    @JsonProperty("nomGre")
+    public String name;
 
 }

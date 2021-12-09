@@ -1,4 +1,4 @@
-package br.com.senior.erpx.pessoa;
+package br.com.senior.erpx.product;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -15,9 +15,6 @@ public class ProductPayload {
 
     public static final JacksonDataFormat PRODUCT_FORMAT = new JacksonDataFormat(ProductPayload.class);
 
-    /**
-     * Id da entidade
-     */
     public String id;
 
     /**

@@ -1,4 +1,4 @@
-package br.com.senior.erpx.pessoa;
+package br.com.senior.erpx.person;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -7,8 +7,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import br.com.senior.erpx.city.City;
-import br.com.senior.erpx.city.State;
+import br.com.senior.erpx.company.CompanyGroup;
+import br.com.senior.erpx.local.City;
+import br.com.senior.erpx.local.Country;
+import br.com.senior.erpx.local.State;
+import br.com.senior.erpx.local.ZipCode;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
@@ -18,14 +21,12 @@ public class Person {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Person.class);
 
-    /**
-     * Id da entidade
-     */
     public String id;
     /**
      * Código
      */
-    public Long codPes;
+    @JsonProperty("codPes")
+    public Long code;
     /**
      * Nome
      */
@@ -49,35 +50,43 @@ public class Person {
     /**
      * Número de identificação fiscal (NIF)
      */
-    public String numIdf;
+    @JsonProperty("numIdf")
+    public String taxIdentificationNumber;
     /**
      * Inscrição estadual
      */
-    public String insEst;
+    @JsonProperty("insEst")
+    public String stateRegistration;
     /**
      * Inscrição municipal
      */
-    public String insMun;
+    @JsonProperty("insMun")
+    public String municipalRegistration;
     /**
      * Grupo de empresas
      */
-    public CompanyGroup e069gre;
+    @JsonProperty("e069gre")
+    public CompanyGroup companyGroup;
     /**
      * CEP
      */
-    public ZipCode e008cep;
+    @JsonProperty("e008cep")
+    public ZipCode zipCode;
     /**
      * Endereço
      */
-    public String endPes;
+    @JsonProperty("endPes")
+    public String address;
     /**
      * Número
      */
-    public String numEnd;
+    @JsonProperty("numEnd")
+    public String addressNumber;
     /**
      * Bairro
      */
-    public String nomBai;
+    @JsonProperty("nomBai")
+    public String district;
     /**
      * Pais
      */
@@ -96,27 +105,33 @@ public class Person {
     /**
      * Telefone
      */
-    public String fonPes;
+    @JsonProperty("fonPes")
+    public String phone;
     /**
      * Situação
      */
-    public String sitPes;
+    @JsonProperty("sitPes")
+    public String situation;
     /**
      * Indica se o registro foi excluído
      */
-    public Boolean excluido = false;
+    @JsonProperty("excluido")
+    public Boolean excluded = false;
     /**
      * Número do RG
      */
-    public String numRge;
+    @JsonProperty("numRge")
+    public String ID;
     /**
      * Tipo de mercado do cliente
      */
-    public String tipMer;
+    @JsonProperty("tipMer")
+    public String marketType;
     /**
      * Complemento
      */
-    public String cplEnd;
+    @JsonProperty("cplEnd")
+    public String addressComplement;
     /**
      * Zip code
      */
@@ -124,14 +139,17 @@ public class Person {
     /**
      * Telefone 2
      */
-    public String fonPe2;
+    @JsonProperty("fonPe2")
+    public String phone2;
     /**
      * E-mail
      */
-    public String intNet;
+    @JsonProperty("intNet")
+    public String eMail;
     /**
      * E-mail para envio de documentos eletrônicos
      */
-    public String emaNfe;
+    @JsonProperty("emaNfe")
+    public String eDocEMail;
 
 }

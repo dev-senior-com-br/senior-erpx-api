@@ -1,4 +1,4 @@
-package br.com.senior.erpx.city;
+package br.com.senior.erpx.local;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import br.com.senior.erpx.pessoa.Country;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
@@ -17,14 +16,17 @@ public class State {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(State.class);
 
+    public String id;
     /**
      * Sigla
      */
-    public String sigUfs;
+    @JsonProperty("sigUfs")
+    public String initials;
     /**
      * Nome
      */
-    public String nomUfs;
+    @JsonProperty("nomUfs")
+    public String name;
     /**
      * País
      */

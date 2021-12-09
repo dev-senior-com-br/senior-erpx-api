@@ -1,11 +1,10 @@
-package br.com.senior.erpx.pessoa;
-
-import java.util.List;
+package br.com.senior.erpx.local;
 
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
@@ -13,12 +12,20 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
-public class SearchPersonResponse {
+public class Country {
 
-    public static final JacksonDataFormat SEARCH_PERSON_RESPONSE_FORMAT = new JacksonDataFormat(SearchPersonResponse.class);
+    public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Country.class);
 
-    public Long totalPages;
-    public Long totalElements;
-    public List<Person> contents;
+    public String id;
+    /**
+     * Código
+     */
+    @JsonProperty("codPai")
+    public String code;
+    /**
+     * Nome
+     */
+    @JsonProperty("nomPai")
+    public String name;
 
 }

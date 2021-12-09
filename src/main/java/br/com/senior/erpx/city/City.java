@@ -3,11 +3,15 @@ package br.com.senior.erpx.city;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(Include.NON_NULL)
 public class City {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(City.class);
@@ -16,14 +20,17 @@ public class City {
     /**
      * Código cidade
      */
-    public Long codRai;
+    @JsonProperty("codRai")
+    public Long code;
     /**
      * Nome cidade
      */
-    public String nomCid;
+    @JsonProperty("nomCid")
+    public String name;
     /**
      * Estado
      */
-    public State e007ufs;
+    @JsonProperty("e007ufs")
+    public State state;
 
 }

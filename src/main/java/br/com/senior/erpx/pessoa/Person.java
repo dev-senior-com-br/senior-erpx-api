@@ -3,6 +3,9 @@ package br.com.senior.erpx.pessoa;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.com.senior.erpx.city.City;
 import br.com.senior.erpx.city.State;
@@ -10,6 +13,7 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(serialization = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(Include.NON_NULL)
 public class Person {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Person.class);
@@ -25,19 +29,23 @@ public class Person {
     /**
      * Nome
      */
-    public String nomPes;
+    @JsonProperty("nomPes")
+    public String name;
     /**
      * Nome fantasia
      */
-    public String apePes;
+    @JsonProperty("apePes")
+    public String surname;
     /**
      * Tipo de pessoa
      */
-    public String tipPes;
+    @JsonProperty("tipPes")
+    public String type;
     /**
      * CNPJ/CPF
      */
-    public String cnpCpf;
+    @JsonProperty("cnpCpf")
+    public String idNumber;
     /**
      * Número de identificação fiscal (NIF)
      */
@@ -73,15 +81,18 @@ public class Person {
     /**
      * Pais
      */
-    public Country e006pai;
+    @JsonProperty("e006pai")
+    public Country country;
     /**
      * Estado
      */
-    public State e007ufs;
+    @JsonProperty("e007ufs")
+    public State state;
     /**
      * Cidade
      */
-    public City e008rai;
+    @JsonProperty("e008rai")
+    public City city;
     /**
      * Telefone
      */
@@ -90,5 +101,37 @@ public class Person {
      * Situação
      */
     public String sitPes;
+    /**
+     * Indica se o registro foi excluído
+     */
+    public Boolean excluido = false;
+    /**
+     * Número do RG
+     */
+    public String numRge;
+    /**
+     * Tipo de mercado do cliente
+     */
+    public String tipMer;
+    /**
+     * Complemento
+     */
+    public String cplEnd;
+    /**
+     * Zip code
+     */
+    public String zipCod;
+    /**
+     * Telefone 2
+     */
+    public String fonPe2;
+    /**
+     * E-mail
+     */
+    public String intNet;
+    /**
+     * E-mail para envio de documentos eletrônicos
+     */
+    public String emaNfe;
 
 }

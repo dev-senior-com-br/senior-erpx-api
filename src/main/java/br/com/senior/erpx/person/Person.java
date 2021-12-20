@@ -21,6 +21,7 @@ public class Person {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(Person.class);
 
+    @JsonProperty("id")
     public String id;
     /**
      * Código
@@ -135,6 +136,7 @@ public class Person {
     /**
      * Zip code
      */
+    @JsonProperty("zipCod")
     public String zipCod;
     /**
      * Telefone 2

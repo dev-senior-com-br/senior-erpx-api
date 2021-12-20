@@ -16,6 +16,7 @@ public class City {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(City.class);
 
+    @JsonProperty("id")
     public String id;
     /**
      * Código cidade

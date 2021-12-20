@@ -16,6 +16,7 @@ public class State {
 
     public static final JacksonDataFormat PERSON_FORMAT = new JacksonDataFormat(State.class);
 
+    @JsonProperty("id")
     public String id;
     /**
      * Sigla
